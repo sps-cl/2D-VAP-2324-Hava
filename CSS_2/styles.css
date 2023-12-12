@@ -1,0 +1,47 @@
+.inline-container, .inline-block-container, .block-container, .flex-container {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: black;
+}
+.inline-div {
+    display: inline;
+    background-color: black;
+}
+.inline-block-div {
+    display: inline-block;
+    background-color: red;
+}
+.block-div {
+    display: block;
+    background-color: green;
+}
+.flex-div {
+    background-color: blue;
+}
+.inline-div, .inline-block-div, .block-div, .flex-div {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    color: gray;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: 3s;
+}
+.inline-div:hover, .inline-block-div:hover, .block-div:hover, .flex-div:hover {
+    background-color: purple;
+
+}
+@keyframes yours_selected_name {
+    100% { width: 200px }
+}
+.inline-div, .inline-block-div, .block-div, .flex-div {
+    animation-name: yours_selected_name;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
