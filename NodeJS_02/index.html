@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Form</h1>
+        <form action="/add-user" method="post">
+            <input type="text" name="name" placeholder="name" required>
+            <label for="name"></label>
+            <input type="text" name="surname" placeholder="surname" required>
+            <label for="surname"></label>
+            <input type="submit" value="send">
+        </form>
+    </body>
+</html>
+
+<script>
+    async function send() { //! Might cause errors
+        let data = await fetch("/add-user", 
+            {
+                method: "post",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: {
+                    name: document.getElementById("name").value,
+                    surname: document.getElementById("surname").value,
+                }
+            }
+        )
+    }
+</script>
